@@ -17,10 +17,14 @@ class _ExplorePageState extends State<ExplorePage> {
       appBar: AppBar(
         backgroundColor: Colors.white,
         leading: Padding(
-          padding: const EdgeInsets.only(left: 10.0),
+          padding: const EdgeInsets.only(left: 15.0),
 
-          child: Image.asset('assets/images/category.jpg'),
+          child: Image.asset(
+            'assets/images/category.jpg',
+            fit: BoxFit.fitWidth,
+          ),
         ),
+        leadingWidth: 70,
         titleSpacing: 10,
         title: const Text(
           'Cafe Orders',
@@ -36,6 +40,7 @@ class _ExplorePageState extends State<ExplorePage> {
             icon: const Icon(Icons.notifications_none_outlined),
           ),
           Container(
+            margin: EdgeInsets.only(left: 10),
             decoration: BoxDecoration(
               color: const Color.fromRGBO(41, 105, 91, 1),
               shape: BoxShape.circle,
@@ -46,10 +51,11 @@ class _ExplorePageState extends State<ExplorePage> {
             ),
           ),
         ],
+        actionsPadding: EdgeInsets.only(right: 15),
       ),
       body: SafeArea(
         child: Padding(
-          padding: EdgeInsetsGeometry.all(15),
+          padding: EdgeInsetsGeometry.only(left: 15, right: 15, top: 15),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -61,7 +67,7 @@ class _ExplorePageState extends State<ExplorePage> {
                   letterSpacing: 1,
                 ),
               ),
-              SizedBox(height: 10,),
+              SizedBox(height: 10),
               Expanded(
                 child: GridView.builder(
                   itemCount: categoryItem.length,
@@ -80,18 +86,25 @@ class _ExplorePageState extends State<ExplorePage> {
                         decoration: BoxDecoration(
                           color: const Color.fromRGBO(245, 236, 231, 1),
                           borderRadius: BorderRadius.circular(20),
-                          boxShadow: [BoxShadow(
-                            spreadRadius: -2,
-                            blurRadius: 14,
-                            color: const Color.fromRGBO(44, 40, 37, 0.06)
-                          )]
+                          boxShadow: [
+                            BoxShadow(
+                              spreadRadius: -2,
+                              blurRadius: 14,
+                              color: const Color.fromRGBO(44, 40, 37, 0.06),
+                            ),
+                          ],
                         ),
                         child: InkWell(
                           borderRadius: BorderRadius.circular(20),
                           onTap: () {
-                            Navigator.push(context, MaterialPageRoute(builder: (context) {
-                              return SharePage();
-                            },));
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) {
+                                  return SharePage(category: item);
+                                },
+                              ),
+                            );
                           },
                           child: Column(
                             children: [

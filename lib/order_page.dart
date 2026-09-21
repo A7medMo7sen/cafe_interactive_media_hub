@@ -34,7 +34,7 @@ class _OrderPageState extends State<OrderPage> {
       ),
       body: SafeArea(
         child: Padding(
-          padding: const EdgeInsets.all(15.0),
+          padding: const EdgeInsets.only(left: 15,right: 15,top: 15),
           child: Column(
             children: [
               Row(
