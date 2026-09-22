@@ -100,9 +100,9 @@ class _SharePageState extends State<SharePage> {
                     ),
 
                     FractionalTranslation(
-                      translation: Offset(1.9, 2),
+                      translation: Offset(1.5, 1.8),
                       child: Container(
-                        padding: EdgeInsets.all(5),
+                        padding: EdgeInsets.all(8),
                         decoration: BoxDecoration(
                           shape: BoxShape.circle,
                           color: Colors.white,

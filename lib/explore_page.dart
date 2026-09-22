@@ -74,13 +74,13 @@ class _ExplorePageState extends State<ExplorePage> {
                   gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                     mainAxisExtent: 160,
                     crossAxisCount: 2,
-                    mainAxisSpacing: 15,
+                    mainAxisSpacing: 30,
                     crossAxisSpacing: 15,
                   ),
                   itemBuilder: (context, index) {
                     final item = categoryItem[index];
                     return Material(
-                      borderRadius: BorderRadius.circular(20),
+                      borderRadius: BorderRadius.circular(30),
                       clipBehavior: Clip.antiAlias,
                       child: Ink(
                         decoration: BoxDecoration(
