@@ -109,7 +109,7 @@ class _ExplorePageState extends State<ExplorePage> {
                           child: Column(
                             children: [
                               SizedBox(height: 20),
-                              Ink(
+                              Container(
                                 padding: EdgeInsets.all(15),
                                 decoration: BoxDecoration(
                                   color: const Color.fromRGBO(177, 239, 225, 1),
